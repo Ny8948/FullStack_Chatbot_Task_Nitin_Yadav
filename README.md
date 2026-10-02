@@ -1,98 +1,135 @@
-\# FullStack Chatbot Task - Nitin Yadav
+# FullStack Chatbot Task - Nitin Yadav
 
+A full-stack customer/student support and enquiry management web application built using React.js, TypeScript, Node.js, Express.js, and MongoDB.
 
+The application provides a rule-based chatbot for answering predefined user queries, an enquiry submission system for customers/students, secure admin authentication, and an admin dashboard for managing enquiries.
 
-\## Project Description
+---
 
+## 📌 Project Overview
 
+This project was developed as a Full Stack Chatbot and Lead/Enquiry Assistant application.
 
-A full-stack customer/student support and enquiry management application built using React, TypeScript, Node.js, Express.js and MongoDB.
+The main purpose of the application is to provide:
 
+- Customer/student support through a predefined chatbot
+- Enquiry collection through a structured form
+- Secure admin authentication
+- Centralized enquiry management
+- Search and filtering functionality
+- Enquiry status management
+- CRUD operations
+- MongoDB database integration
+- Form validation and error handling
+- Basic backend security
 
+The chatbot uses predefined/rule-based responses and does not require an external AI/LLM API.
 
-The application provides a rule-based chatbot, enquiry collection system and secure admin dashboard for managing enquiries.
+---
 
+# 🎯 Objectives
 
+The main objectives of this project are:
 
-\## Technologies Used
+1. Build a responsive React.js + TypeScript frontend.
+2. Develop a functional rule-based chatbot.
+3. Collect customer/student enquiries.
+4. Store enquiry information in MongoDB.
+5. Develop REST APIs using Node.js and Express.js.
+6. Implement CRUD operations for enquiries.
+7. Provide secure admin authentication using JWT.
+8. Create an admin dashboard for enquiry management.
+9. Implement search and filtering.
+10. Provide enquiry status management.
+11. Implement form validation and error handling.
+12. Apply basic security practices to the backend.
 
+---
 
+# 🛠️ Technologies Used
 
-\- React.js
+## Frontend
 
-\- TypeScript
+- React.js
+- TypeScript
+- Vite
+- React Router DOM
+- Axios
+- CSS
+- Lucide React
 
-\- Node.js
+## Backend
 
-\- Express.js
+- Node.js
+- Express.js
+- TypeScript
+- Mongoose
+- JWT
+- bcryptjs
+- Helmet
+- Express Rate Limit
+- CORS
+- dotenv
 
-\- MongoDB
+## Database
 
-\- Mongoose
+- MongoDB
+- MongoDB Atlas
 
-\- JWT Authentication
+## Development Tools
 
-\- Axios
+- Visual Studio Code
+- Git
+- GitHub
+- Postman
+- PowerShell
+- Chrome DevTools
 
-\- React Router
+---
 
-\- CSS
+# ✨ Features
 
+## 1. Responsive Frontend
 
+The application provides a responsive user interface developed using React.js and TypeScript.
 
-\## Features
+Main frontend pages include:
 
+- Home
+- Services
+- Enquiry
+- Admin Login
+- Admin Dashboard
+- Enquiry Details
+- Not Found
 
+---
 
-\- Responsive React + TypeScript frontend
+## 2. Rule-Based Chatbot
 
-\- Rule-based chatbot
+The application includes a predefined/rule-based chatbot.
 
-\- Customer/student enquiry form
+The chatbot can respond to predefined queries related to:
 
-\- Backend REST API
+- Training
+- Drone services
+- GIS & Mapping
+- AI & Technology
+- Career
+- Business
+- General enquiries
 
-\- MongoDB database integration
+The chatbot does not use an external AI/LLM API.
 
-\- Enquiry CRUD operations
-
-\- Admin authentication
-
-\- JWT-based protected routes
-
-\- Admin enquiry dashboard
-
-\- Search and filtering
-
-\- Enquiry status management
-
-\- Form validation
-
-\- Error handling
-
-\- Basic security using Helmet and rate limiting
-
-
-
-\## Project Structure
-
-
+### Chatbot Flow
 
 ```text
-
-FullStack\_Chatbot\_Task\_Nitin\_Yadav/
-
-│
-
-├── client/
-
-│
-
-├── server/
-
-│
-
-├── README.md
-
-└── .gitignore
-
+User Message
+     ↓
+Chatbot
+     ↓
+Keyword / Rule Matching
+     ↓
+Predefined Response
+     ↓
+Chat Response
