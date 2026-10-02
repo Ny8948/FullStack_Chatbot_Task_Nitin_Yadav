@@ -1,54 +1,92 @@
 # FullStack Chatbot Task - Nitin Yadav
 
-A full-stack customer/student support and enquiry management web application built using React.js, TypeScript, Node.js, Express.js, and MongoDB.
+A responsive full-stack **AI Support & Lead Assistant** web application built using React, TypeScript, Node.js, Express.js and MongoDB.
 
-The application provides a rule-based chatbot for answering predefined user queries, an enquiry submission system for customers/students, secure admin authentication, and an admin dashboard for managing enquiries.
+The application provides a rule-based chatbot for customer/student support, collects enquiries/leads through an enquiry form, and provides an admin dashboard for managing enquiries.
+
+> **Note:** The chatbot uses predefined/rule-based responses. No real AI/LLM API is required.
 
 ---
 
-## 📌 Project Overview
+## 1. Project Overview
 
-This project was developed as a Full Stack Chatbot and Lead/Enquiry Assistant application.
+The **AI Support & Lead Assistant** is a full-stack web application designed to help businesses, training institutes, and service providers handle customer/student enquiries.
 
-The main purpose of the application is to provide:
+The system provides:
 
-- Customer/student support through a predefined chatbot
-- Enquiry collection through a structured form
-- Secure admin authentication
-- Centralized enquiry management
-- Search and filtering functionality
+- Customer support chatbot
+- Service information
+- Customer/student enquiry collection
+- Admin authentication
+- Admin dashboard
+- Enquiry management
+- Search and filtering
 - Enquiry status management
-- CRUD operations
 - MongoDB database integration
-- Form validation and error handling
-- Basic backend security
-
-The chatbot uses predefined/rule-based responses and does not require an external AI/LLM API.
+- REST APIs
+- JWT authentication
+- Password hashing
+- Form validation
+- Responsive UI
 
 ---
 
-# 🎯 Objectives
+## 2. Objectives
 
 The main objectives of this project are:
 
-1. Build a responsive React.js + TypeScript frontend.
-2. Develop a functional rule-based chatbot.
-3. Collect customer/student enquiries.
-4. Store enquiry information in MongoDB.
-5. Develop REST APIs using Node.js and Express.js.
-6. Implement CRUD operations for enquiries.
-7. Provide secure admin authentication using JWT.
-8. Create an admin dashboard for enquiry management.
-9. Implement search and filtering.
-10. Provide enquiry status management.
-11. Implement form validation and error handling.
-12. Apply basic security practices to the backend.
+- Provide quick responses to common customer questions.
+- Collect customer/student enquiries through an online form.
+- Store enquiry data securely in MongoDB.
+- Provide an admin dashboard for enquiry management.
+- Allow administrators to search and filter enquiries.
+- Implement secure admin authentication.
+- Provide a responsive and user-friendly interface.
+- Demonstrate complete frontend and backend integration.
 
 ---
 
-# 🛠️ Technologies Used
+## 3. Features
 
-## Frontend
+### User Features
+
+- Responsive home page
+- Services page
+- Rule-based chatbot
+- Enquiry form
+- Form validation
+- Success/error messages
+- Mobile responsive design
+
+### Chatbot Features
+
+- Floating chatbot button
+- Open/close chatbot window
+- Predefined responses
+- Service-related responses
+- Contact-related responses
+- Pricing-related responses
+- Enquiry guidance
+- Unknown-question fallback response
+
+### Admin Features
+
+- Admin login
+- JWT authentication
+- Protected dashboard
+- View enquiries
+- Search enquiries
+- Filter enquiries
+- View enquiry details
+- Update enquiry status
+- Delete enquiries
+- Logout
+
+---
+
+## 4. Technology Stack
+
+### Frontend
 
 - React.js
 - TypeScript
@@ -56,346 +94,116 @@ The main objectives of this project are:
 - React Router DOM
 - Axios
 - CSS
-- Lucide React
 
-## Backend
+### Backend
 
 - Node.js
 - Express.js
 - TypeScript
-- Mongoose
-- JWT
-- bcryptjs
-- Helmet
-- Express Rate Limit
-- CORS
-- dotenv
+- REST API
 
-## Database
+### Database
 
 - MongoDB
-- MongoDB Atlas
+- Mongoose
 
-## Development Tools
+### Authentication & Security
+
+- JWT
+- bcryptjs
+- Environment variables
+- Input validation
+- Protected routes
+- CORS
+
+### Development Tools
 
 - Visual Studio Code
 - Git
 - GitHub
 - Postman
-- PowerShell
-- Chrome DevTools
+- MongoDB Compass
+- MongoDB Atlas
 
 ---
 
-# ✨ Features
-
-## 1. Responsive Frontend
-
-The application provides a responsive user interface developed using React.js and TypeScript.
-
-Main frontend pages include:
-
-- Home
-- Services
-- Enquiry
-- Admin Login
-- Admin Dashboard
-- Enquiry Details
-- Not Found
-
----
-
-## 2. Rule-Based Chatbot
-
-The application includes a predefined/rule-based chatbot.
-
-The chatbot can respond to predefined queries related to:
-
-- Training
-- Drone services
-- GIS & Mapping
-- AI & Technology
-- Career
-- Business
-- General enquiries
-
-The chatbot does not use an external AI/LLM API.
-
-### Chatbot Flow
-
-Step 2: Install Frontend Dependencies
-
-Open terminal:
-
-cd client
-
-Install dependencies:
-
-npm install
-Step 3: Install Backend Dependencies
-
-Open another terminal:
-
-cd server
-
-Install dependencies:
-
-npm install
-5. Environment Variables
-
-Create a .env file inside the server folder:
-
-server/.env
-
-Add the following variables:
-
-PORT=5000
-
-MONGO_URI=your_mongodb_connection_string
-
-JWT_SECRET=your_secret_key
-Example
-PORT=5000
-
-MONGO_URI=mongodb://127.0.0.1:27017/fullstack_chatbot
-
-JWT_SECRET=your_super_secret_key
-
-For MongoDB Atlas, use your MongoDB Atlas connection string.
-
-Important
-
-Do not upload .env to GitHub because it contains sensitive configuration.
-
-6. Database Setup
-
-This project uses MongoDB with Mongoose.
-
-MongoDB Local
-
-Install and start MongoDB locally.
-
-Example database:
-
-fullstack_chatbot
-
-MongoDB connection:
-
-MONGO_URI=mongodb://127.0.0.1:27017/fullstack_chatbot
-MongoDB Atlas
-
-Alternatively, create a MongoDB Atlas cluster and add its connection string to:
-
-server/.env
-
-Example:
-
-MONGO_URI=your_mongodb_atlas_connection_string
-Main Collections
-Users
-
-Stores admin account information.
-
-{
-  "name": "Admin",
-  "email": "admin@example.com",
-  "password": "HASHED_PASSWORD",
-  "role": "admin"
-}
-Enquiries
-
-Stores customer/student enquiry information.
-
-{
-  "name": "Nitin Yadav",
-  "email": "nitin@example.com",
-  "phone": "9876543210",
-  "userType": "student",
-  "category": "training",
-  "company": "Lloyd Institute",
-  "message": "I want to know more about training.",
-  "status": "new",
-  "source": "website-form"
-}
-7. API Endpoints
-Authentication
-Admin Login
-POST /api/auth/login
-
-Request:
-
-{
-  "email": "admin@example.com",
-  "password": "Admin@123"
-}
-Chatbot
-Get Chatbot Response
-POST /api/chat
-
-Used for predefined/rule-based chatbot responses.
-
-Enquiry APIs
-Create Enquiry
-POST /api/enquiries
-
-Public endpoint used by customers/students.
-
-Example request:
-
-{
-  "name": "Nitin Yadav",
-  "email": "nitin@example.com",
-  "phone": "9876543210",
-  "userType": "student",
-  "category": "training",
-  "company": "Lloyd Institute",
-  "message": "I want to know more about training."
-}
-Get All Enquiries
-GET /api/enquiries
-
-Admin authentication required.
-
-Get Enquiry By ID
-GET /api/enquiries/:id
-
-Admin authentication required.
-
-Update Enquiry
-PUT /api/enquiries/:id
-
-Example:
-
-{
-  "status": "in-progress"
-}
-
-Available statuses:
-
-new
-in-progress
-resolved
-closed
-Delete Enquiry
-DELETE /api/enquiries/:id
-
-Admin authentication required.
-
-8. Screenshots
-
-The following screenshots demonstrate the main functionality of the application.
-
-Home Page
-
-Add screenshot here:
-
-02_Screenshots/home.png
-Chatbot
-
-Add screenshot here:
-
-02_Screenshots/chatbot.png
-Enquiry Form
-
-Add screenshot here:
-
-02_Screenshots/enquiry-form.png
-Admin Login
-
-Add screenshot here:
-
-02_Screenshots/admin-login.png
-Admin Dashboard
-
-Add screenshot here:
-
-02_Screenshots/admin-dashboard.png
-Search and Filtering
-
-Add screenshot here:
-
-02_Screenshots/search-filter.png
-Enquiry Details
-
-Add screenshot here:
-
-02_Screenshots/enquiry-details.png
-MongoDB Database
-
-Add screenshot here:
-
-02_Screenshots/mongodb.png
-9. How to Run Frontend and Backend
-Run Backend
-
-Open PowerShell terminal:
-
-cd server
-
-Install dependencies:
-
-npm install
-
-Start backend:
-
-npm run dev
-
-Backend will run on:
-
-http://localhost:5000
-Run Frontend
-
-Open another PowerShell terminal:
-
-cd client
-
-Install dependencies:
-
-npm install
-
-Start frontend:
-
-npm run dev
-
-Frontend will run on:
-
-http://localhost:5173
-Application URLs
-Page	URL
-Home	http://localhost:5173
-Enquiry	http://localhost:5173/enquiry
-Admin Login	http://localhost:5173/login
-Admin Dashboard	http://localhost:5173/admin/dashboard
-Project Flow
-User
- │
- ▼
-React + TypeScript Frontend
- │
- ├── Chatbot
- │
- ├── Enquiry Form
- │
- └── Admin Login
-       │
-       ▼
-Node.js + Express Backend
-       │
-       ├── Authentication
-       ├── Chatbot API
-       └── Enquiry APIs
-              │
-              ▼
-           MongoDB
-              │
-              ▼
-       Admin Dashboard
-              │
-              ├── Search
-              ├── Filter
-              ├── View
-              ├── Update
-              └── Delete
-GitHub Repository
-
-https://github.com/Ny8948/FullStack_Chatbot_Task_Nitin_Yadav
+## 5. Project Structure
+
+```text
+FullStack_Chatbot_Task_Nitin_Yadav/
+│
+├── client/
+│   │
+│   ├── src/
+│   │   ├── assets/
+│   │   │
+│   │   ├── components/
+│   │   │   ├── Navbar.tsx
+│   │   │   ├── Footer.tsx
+│   │   │   ├── Chatbot.tsx
+│   │   │   ├── ChatMessage.tsx
+│   │   │   ├── EnquiryForm.tsx
+│   │   │   ├── ServiceCard.tsx
+│   │   │   └── ProtectedRoute.tsx
+│   │   │
+│   │   ├── pages/
+│   │   │   ├── Home.tsx
+│   │   │   ├── Services.tsx
+│   │   │   ├── Enquiry.tsx
+│   │   │   ├── Login.tsx
+│   │   │   ├── AdminDashboard.tsx
+│   │   │   └── NotFound.tsx
+│   │   │
+│   │   ├── services/
+│   │   │   ├── api.ts
+│   │   │   ├── chatService.ts
+│   │   │   └── enquiryService.ts
+│   │   │
+│   │   ├── types/
+│   │   │   ├── chat.ts
+│   │   │   ├── enquiry.ts
+│   │   │   └── user.ts
+│   │   │
+│   │   ├── App.tsx
+│   │   ├── main.tsx
+│   │   └── index.css
+│   │
+│   ├── package.json
+│   └── .env
+│
+├── server/
+│   │
+│   ├── config/
+│   │   └── db.ts
+│   │
+│   ├── controllers/
+│   │   ├── authController.ts
+│   │   ├── chatController.ts
+│   │   └── enquiryController.ts
+│   │
+│   ├── middleware/
+│   │   ├── authMiddleware.ts
+│   │   ├── errorMiddleware.ts
+│   │   └── validationMiddleware.ts
+│   │
+│   ├── models/
+│   │   ├── User.ts
+│   │   └── Enquiry.ts
+│   │
+│   ├── routes/
+│   │   ├── authRoutes.ts
+│   │   ├── chatRoutes.ts
+│   │   └── enquiryRoutes.ts
+│   │
+│   ├── services/
+│   │   └── chatbotService.ts
+│   │
+│   ├── utils/
+│   │   └── generateToken.ts
+│   │
+│   ├── server.ts
+│   ├── package.json
+│   └── .env
+│
+├── .gitignore
+└── README.md
