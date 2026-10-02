@@ -123,13 +123,279 @@ The chatbot does not use an external AI/LLM API.
 
 ### Chatbot Flow
 
-```text
-User Message
-     ↓
+Step 2: Install Frontend Dependencies
+
+Open terminal:
+
+cd client
+
+Install dependencies:
+
+npm install
+Step 3: Install Backend Dependencies
+
+Open another terminal:
+
+cd server
+
+Install dependencies:
+
+npm install
+5. Environment Variables
+
+Create a .env file inside the server folder:
+
+server/.env
+
+Add the following variables:
+
+PORT=5000
+
+MONGO_URI=your_mongodb_connection_string
+
+JWT_SECRET=your_secret_key
+Example
+PORT=5000
+
+MONGO_URI=mongodb://127.0.0.1:27017/fullstack_chatbot
+
+JWT_SECRET=your_super_secret_key
+
+For MongoDB Atlas, use your MongoDB Atlas connection string.
+
+Important
+
+Do not upload .env to GitHub because it contains sensitive configuration.
+
+6. Database Setup
+
+This project uses MongoDB with Mongoose.
+
+MongoDB Local
+
+Install and start MongoDB locally.
+
+Example database:
+
+fullstack_chatbot
+
+MongoDB connection:
+
+MONGO_URI=mongodb://127.0.0.1:27017/fullstack_chatbot
+MongoDB Atlas
+
+Alternatively, create a MongoDB Atlas cluster and add its connection string to:
+
+server/.env
+
+Example:
+
+MONGO_URI=your_mongodb_atlas_connection_string
+Main Collections
+Users
+
+Stores admin account information.
+
+{
+  "name": "Admin",
+  "email": "admin@example.com",
+  "password": "HASHED_PASSWORD",
+  "role": "admin"
+}
+Enquiries
+
+Stores customer/student enquiry information.
+
+{
+  "name": "Nitin Yadav",
+  "email": "nitin@example.com",
+  "phone": "9876543210",
+  "userType": "student",
+  "category": "training",
+  "company": "Lloyd Institute",
+  "message": "I want to know more about training.",
+  "status": "new",
+  "source": "website-form"
+}
+7. API Endpoints
+Authentication
+Admin Login
+POST /api/auth/login
+
+Request:
+
+{
+  "email": "admin@example.com",
+  "password": "Admin@123"
+}
 Chatbot
-     ↓
-Keyword / Rule Matching
-     ↓
-Predefined Response
-     ↓
-Chat Response
+Get Chatbot Response
+POST /api/chat
+
+Used for predefined/rule-based chatbot responses.
+
+Enquiry APIs
+Create Enquiry
+POST /api/enquiries
+
+Public endpoint used by customers/students.
+
+Example request:
+
+{
+  "name": "Nitin Yadav",
+  "email": "nitin@example.com",
+  "phone": "9876543210",
+  "userType": "student",
+  "category": "training",
+  "company": "Lloyd Institute",
+  "message": "I want to know more about training."
+}
+Get All Enquiries
+GET /api/enquiries
+
+Admin authentication required.
+
+Get Enquiry By ID
+GET /api/enquiries/:id
+
+Admin authentication required.
+
+Update Enquiry
+PUT /api/enquiries/:id
+
+Example:
+
+{
+  "status": "in-progress"
+}
+
+Available statuses:
+
+new
+in-progress
+resolved
+closed
+Delete Enquiry
+DELETE /api/enquiries/:id
+
+Admin authentication required.
+
+8. Screenshots
+
+The following screenshots demonstrate the main functionality of the application.
+
+Home Page
+
+Add screenshot here:
+
+02_Screenshots/home.png
+Chatbot
+
+Add screenshot here:
+
+02_Screenshots/chatbot.png
+Enquiry Form
+
+Add screenshot here:
+
+02_Screenshots/enquiry-form.png
+Admin Login
+
+Add screenshot here:
+
+02_Screenshots/admin-login.png
+Admin Dashboard
+
+Add screenshot here:
+
+02_Screenshots/admin-dashboard.png
+Search and Filtering
+
+Add screenshot here:
+
+02_Screenshots/search-filter.png
+Enquiry Details
+
+Add screenshot here:
+
+02_Screenshots/enquiry-details.png
+MongoDB Database
+
+Add screenshot here:
+
+02_Screenshots/mongodb.png
+9. How to Run Frontend and Backend
+Run Backend
+
+Open PowerShell terminal:
+
+cd server
+
+Install dependencies:
+
+npm install
+
+Start backend:
+
+npm run dev
+
+Backend will run on:
+
+http://localhost:5000
+Run Frontend
+
+Open another PowerShell terminal:
+
+cd client
+
+Install dependencies:
+
+npm install
+
+Start frontend:
+
+npm run dev
+
+Frontend will run on:
+
+http://localhost:5173
+Application URLs
+Page	URL
+Home	http://localhost:5173
+Enquiry	http://localhost:5173/enquiry
+Admin Login	http://localhost:5173/login
+Admin Dashboard	http://localhost:5173/admin/dashboard
+Project Flow
+User
+ │
+ ▼
+React + TypeScript Frontend
+ │
+ ├── Chatbot
+ │
+ ├── Enquiry Form
+ │
+ └── Admin Login
+       │
+       ▼
+Node.js + Express Backend
+       │
+       ├── Authentication
+       ├── Chatbot API
+       └── Enquiry APIs
+              │
+              ▼
+           MongoDB
+              │
+              ▼
+       Admin Dashboard
+              │
+              ├── Search
+              ├── Filter
+              ├── View
+              ├── Update
+              └── Delete
+GitHub Repository
+
+https://github.com/Ny8948/FullStack_Chatbot_Task_Nitin_Yadav
